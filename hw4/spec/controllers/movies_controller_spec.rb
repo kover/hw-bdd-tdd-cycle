@@ -21,18 +21,18 @@ describe MoviesController do
 	  end
 
 	  it 'should generate route for Similar Movies' do
-	  	expect({ :get => similar_path(1) }).to route_to(:controller => "movies", :action => "similar", :id => "1")
+	  	expect({ :get => movie_similar_path(1) }).to route_to(:controller => "movies", :action => "similar", :movie_id => "1")
 	  end
 
 	  it 'should call the model method that finds similar movies' do
 	  	fake_results = [double(Movie), double(Movie)]
 	  	expect(Movie).to receive(:similar_director).with("George Lucas").and_return(fake_results)
-	  	get :similar, :id => "1"
+	  	get :similar, :movie_id => "1"
 	  end
 
 	  it 'should select the similar template for rendering and make result available' do
 	  	allow(Movie).to receive(:similar_director).with("George Lucas").and_return(@movie)
-	  	get :similar, :id => "1"
+	  	get :similar, :movie_id => "1"
 	  	expect(response).to render_template("similar")
 	  	expect(assigns(:movies)).to eq(@movie)
 	  end
@@ -45,10 +45,10 @@ describe MoviesController do
 	  end
 
 	  it 'should generate routing for Similar Movies' do
-	    expect({ :get => similar_path(1) }).to route_to(:controller => "movies", :action => "similar", :id => "1")
+	    expect({ :get => movie_similar_path(1) }).to route_to(:controller => "movies", :action => "similar", :movie_id => "1")
 	  end
 	  it 'should select the Index template for rendering and generate a flash' do
-	    get :similar, :id => "1"
+	    get :similar, :movie_id => "1"
 	    expect(response).to redirect_to(movies_path)
 	    expect(flash[:notice]).not_to eq(be_blank)
 	  end

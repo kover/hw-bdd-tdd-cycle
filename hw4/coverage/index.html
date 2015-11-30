@@ -14,7 +14,7 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2015-11-30T23:16:16+05:00">2015-11-30T23:16:16+05:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2015-11-30T23:35:51+05:00">2015-11-30T23:35:51+05:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -788,25 +788,25 @@
         <li class="covered" data-hits="5" data-linenumber="65">
           <span class="hits">5</span>
           
-          <code class="ruby">    @movie = Movie.find params[:id]</code>
+          <code class="ruby">    @movie = Movie.find params[:movie_id]</code>
         </li>
       
         <li class="covered" data-hits="5" data-linenumber="66">
           <span class="hits">5</span>
           
-          <code class="ruby">    @director = @movie.director</code>
+          <code class="ruby">    director = @movie.director</code>
         </li>
       
         <li class="covered" data-hits="5" data-linenumber="67">
           <span class="hits">5</span>
           
-          <code class="ruby">    if not @director.blank?</code>
+          <code class="ruby">    if not director.blank?</code>
         </li>
       
         <li class="covered" data-hits="3" data-linenumber="68">
           <span class="hits">3</span>
           
-          <code class="ruby">      @movies = Movie.similar_director @director</code>
+          <code class="ruby">      @movies = Movie.similar_director director</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="69">

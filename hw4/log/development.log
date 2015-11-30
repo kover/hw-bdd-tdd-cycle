@@ -1632,3 +1632,162 @@ Started GET "/assets/jquery.self.js?body=1" for ::1 at 2015-11-30 23:22:54 +0500
 
 
 Started GET "/assets/application.self.js?body=1" for ::1 at 2015-11-30 23:22:54 +0500
+
+
+Started GET "/movies?ratings%5BPG%5D=1&ratings%5BR%5D=1" for ::1 at 2015-11-30 23:36:09 +0500
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"PG"=>"1", "R"=>"1"}}
+  [1m[36mMovie Load (0.6ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('PG', 'R')[0m
+  Rendered movies/index.html.haml within layouts/application (23.1ms)
+Completed 200 OK in 272ms (Views: 223.7ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/assets/application.self.css?body=1" for ::1 at 2015-11-30 23:36:10 +0500
+
+
+Started GET "/assets/jquery_ujs.self.js?body=1" for ::1 at 2015-11-30 23:36:10 +0500
+
+
+Started GET "/assets/application.self.js?body=1" for ::1 at 2015-11-30 23:36:10 +0500
+
+
+Started GET "/assets/jquery.self.js?body=1" for ::1 at 2015-11-30 23:36:10 +0500
+
+
+Started GET "/movies" for ::1 at 2015-11-30 23:36:11 +0500
+Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies?ratings%5BPG%5D=1&ratings%5BR%5D=1
+Completed 302 Found in 4ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BPG%5D=1&ratings%5BR%5D=1" for ::1 at 2015-11-30 23:36:11 +0500
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"PG"=>"1", "R"=>"1"}}
+  [1m[35mMovie Load (0.9ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('PG', 'R')
+  Rendered movies/index.html.haml within layouts/application (21.5ms)
+Completed 200 OK in 51ms (Views: 48.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/movies" for ::1 at 2015-11-30 23:36:11 +0500
+Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies?ratings%5BPG%5D=1&ratings%5BR%5D=1
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self.css?body=1" for ::1 at 2015-11-30 23:36:11 +0500
+
+
+Started GET "/movies?ratings%5BPG%5D=1&ratings%5BR%5D=1" for ::1 at 2015-11-30 23:36:11 +0500
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"PG"=>"1", "R"=>"1"}}
+  [1m[36mMovie Load (0.5ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('PG', 'R')[0m
+  Rendered movies/index.html.haml within layouts/application (17.9ms)
+Completed 200 OK in 45ms (Views: 43.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.self.js?body=1" for ::1 at 2015-11-30 23:36:11 +0500
+
+
+Started GET "/assets/jquery.self.js?body=1" for ::1 at 2015-11-30 23:36:11 +0500
+
+
+Started GET "/assets/jquery_ujs.self.js?body=1" for ::1 at 2015-11-30 23:36:11 +0500
+
+
+Started GET "/assets/application.self.css?body=1" for ::1 at 2015-11-30 23:36:11 +0500
+
+
+Started GET "/assets/jquery.self.js?body=1" for ::1 at 2015-11-30 23:36:11 +0500
+
+
+Started GET "/assets/jquery_ujs.self.js?body=1" for ::1 at 2015-11-30 23:36:11 +0500
+
+
+Started GET "/assets/application.self.js?body=1" for ::1 at 2015-11-30 23:36:11 +0500
+
+
+Started GET "/movies/12" for ::1 at 2015-11-30 23:36:16 +0500
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[35mMovie Load (0.2ms)[0m  SELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1  [["id", 12]]
+  Rendered movies/show.html.haml within layouts/application (9.7ms)
+Completed 200 OK in 48ms (Views: 40.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.self.css?body=1" for ::1 at 2015-11-30 23:36:16 +0500
+
+
+Started GET "/assets/jquery.self.js?body=1" for ::1 at 2015-11-30 23:36:16 +0500
+
+
+Started GET "/assets/jquery_ujs.self.js?body=1" for ::1 at 2015-11-30 23:36:16 +0500
+
+
+Started GET "/assets/application.self.js?body=1" for ::1 at 2015-11-30 23:36:16 +0500
+
+
+Started GET "/movies/12/similar" for ::1 at 2015-11-30 23:36:19 +0500
+Processing by MoviesController#similar as HTML
+  Parameters: {"movie_id"=>"12"}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", 12]]
+  [1m[35mMovie Load (0.2ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."director" = ?  [["director", "James Cameron"]]
+  Rendered movies/similar.html.haml within layouts/application (3.9ms)
+Completed 200 OK in 17ms (Views: 16.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.self.css?body=1" for ::1 at 2015-11-30 23:36:19 +0500
+
+
+Started GET "/assets/jquery.self.js?body=1" for ::1 at 2015-11-30 23:36:19 +0500
+
+
+Started GET "/assets/jquery_ujs.self.js?body=1" for ::1 at 2015-11-30 23:36:19 +0500
+
+
+Started GET "/assets/application.self.js?body=1" for ::1 at 2015-11-30 23:36:19 +0500
+
+
+Started GET "/movies/12" for ::1 at 2015-11-30 23:36:24 +0500
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", 12]]
+  Rendered movies/show.html.haml within layouts/application (0.9ms)
+Completed 200 OK in 15ms (Views: 14.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application.self.css?body=1" for ::1 at 2015-11-30 23:36:24 +0500
+
+
+Started GET "/assets/application.self.js?body=1" for ::1 at 2015-11-30 23:36:24 +0500
+
+
+Started GET "/assets/jquery_ujs.self.js?body=1" for ::1 at 2015-11-30 23:36:24 +0500
+
+
+Started GET "/assets/jquery.self.js?body=1" for ::1 at 2015-11-30 23:36:24 +0500
+
+
+Started GET "/movies" for ::1 at 2015-11-30 23:36:28 +0500
+Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies?ratings%5BPG%5D=1&ratings%5BR%5D=1
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BPG%5D=1&ratings%5BR%5D=1" for ::1 at 2015-11-30 23:36:28 +0500
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"PG"=>"1", "R"=>"1"}}
+  [1m[35mMovie Load (0.2ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('PG', 'R')
+  Rendered movies/index.html.haml within layouts/application (3.5ms)
+Completed 200 OK in 16ms (Views: 15.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/jquery.self.js?body=1" for ::1 at 2015-11-30 23:36:28 +0500
+
+
+Started GET "/assets/application.self.css?body=1" for ::1 at 2015-11-30 23:36:28 +0500
+
+
+Started GET "/assets/jquery_ujs.self.js?body=1" for ::1 at 2015-11-30 23:36:28 +0500
+
+
+Started GET "/assets/application.self.js?body=1" for ::1 at 2015-11-30 23:36:28 +0500
