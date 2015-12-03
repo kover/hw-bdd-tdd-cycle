@@ -14,6 +14,17 @@ describe MoviesController do
 	  end
 	end
 
+	describe 'sort' do
+		it 'should sort by title' do
+      		get 'index', {:ratings => "G", :sort => "title"}
+      		expect(response).to redirect_to({:sort => "title", :ratings => "G"})
+    	end
+    	it 'should sort by release_date' do
+      		get 'index', {:ratings => "G", :sort => "release_date"}
+      		expect(response).to redirect_to( sort: "release_date", ratings: "G" )
+    	end
+	end
+
 	describe 'happy path' do
 	  before :each do
 	    @movie = double(Movie, title: "Star Wars", director: "George Lucas", id: "1")
@@ -55,11 +66,11 @@ describe MoviesController do
 	end
 
   	describe 'create and destroy' do
-      # it 'should create a new movie' do
-      #   data = {:movie => {:title => "John Dies At The End", :rating =>"R", :release_date => nil, :director => "Don Coscarelli"}}
-      #   allow(Movie).to receive(:create!).and_return(double('Movie'))
-      #   post :create, data
-      # end
+      it 'should create a new movie' do
+      	movie = {"title"=>"John Dieas At The End", "rating"=>"PG-13", "release_date(1i)"=>"2015", "release_date(2i)"=>"12", "release_date(3i)"=>"3"}
+      	expect(Movie).to receive(:create!).with(movie).and_return(instance_double(Movie, title: "John Dies At The End"))
+        post :create, movie: movie
+      end
       it 'should destroy a movie' do
         movie = double(Movie, :id => "10", :title => "John Dies At The End", :director => nil)
         allow(Movie).to receive(:find).with("10").and_return(movie)
